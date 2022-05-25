@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+        rudderanalytics = window.rudderanalytics = [];
+        var methods = [
+          "load",
+          "page",
+          "track",
+          "identify",
+          "alias",
+          "group",
+          "ready",
+          "reset",
+          "getAnonymousId",
+          "setAnonymousId",
+        ];
+        for (var i = 0; i < methods.length; i++) {
+          var method = methods[i];
+          rudderanalytics[method] = (function (methodName) {
+            return function () {
+              rudderanalytics.push(
+                [methodName].concat(Array.prototype.slice.call(arguments))
+              );
+            };
+          })(method);
+        }
+      
+        rudderanalytics.load("29fRidmkMjup5IKEkQnHjTqpi9X", "https://rudderstackk.dataplane.rudderstack.com");
+        rudderanalytics.page();
+      </script>
+      
+      <script src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js"></script>
+      <title>Document</title>
+    </head>
+    <body>
+        <ul class="set">
+            <li class="white b" data-type="key" data-key="f"></li>
+            <li class="black as" data-type="key" data-key="fs"></li>
+            <li class="white a" data-type="key" data-key="g"></li>
+            <li class="black gs" data-type="key" data-key="gs"></li>
+            <li class="white g" data-type="key" data-key="a"></li>
+            <li class="black fs" data-type="key" data-key="as"></li>
+            <li class="white f" data-type="key" data-key="b"></li>
+            <li class="white e" data-type="key" data-key="c"></li>
+            <li class="black ds" data-type="key" data-key="cs"></li>
+            <li class="white d" data-type="key" data-key="d"></li>
+            <li class="black cs" data-type="key" data-key="ds"></li>
+            <li class="white c" data-type="key" data-key="e"></li>
+        </ul>
+        <script src="/script.js"></script>
+    </body>
+</html>
