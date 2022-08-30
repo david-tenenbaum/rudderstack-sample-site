@@ -7,7 +7,10 @@ function trackKeyClick() {
         let note = key.getAttribute('data-key');
         key.addEventListener('click', function() {
             rudderanalytics.track('Key Click', {
-                key: note
+                key: {
+                    note: note,
+                    sharp: note[1] === 's',
+                }
             });
         })
     }

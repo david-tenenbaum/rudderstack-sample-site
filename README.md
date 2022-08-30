@@ -1,1 +1,65 @@
-# rudderstack-sample-site
+{
+   "channel":"web",
+   "context":{
+      "app":{
+         "build":"1.0.0",
+         "name":"RudderLabs JavaScript SDK",
+         "namespace":"com.rudderlabs.javascript",
+         "version":"2.12.0"
+      },
+      "traits":{
+         
+      },
+      "library":{
+         "name":"RudderLabs JavaScript SDK",
+         "version":"2.12.0"
+      },
+      "userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36",
+      "os":{
+         "name":"",
+         "version":""
+      },
+      "locale":"en-US",
+      "screen":{
+         "density":2,
+         "width":1512,
+         "height":982,
+         "innerWidth":841,
+         "innerHeight":777
+      },
+      "campaign":{
+         
+      },
+      "page":{
+         "path":"/index.html",
+         "referrer":"$direct",
+         "referring_domain":"",
+         "search":"",
+         "title":"",
+         "url":"http://127.0.0.1:5500/index.html",
+         "tab_url":"http://127.0.0.1:5500/index.html",
+         "initial_referrer":"$direct",
+         "initial_referring_domain":""
+      }
+   },
+   "type":"page",
+   "messageId":"1661277042556300-1e130d0d-d41b-4f8a-b2b8-6e079f4655d2",
+   "originalTimestamp":"2022-08-23T17:50:42.556Z",
+   "anonymousId":"90734e78-9516-4526-b0b0-186e2d4d992e",
+   "userId":"",
+   "properties":{
+      "path":"/index.html",
+      "referrer":"$direct",
+      "referring_domain":"",
+      "search":"",
+      "title":"",
+      "url":"http://127.0.0.1:5500/index.html",
+      "tab_url":"http://127.0.0.1:5500/index.html",
+      "initial_referrer":"$direct",
+      "initial_referring_domain":""
+   },
+   "integrations":{
+      "All":true
+   },
+   "sentAt":"2022-08-23T17:50:42.559Z"
+}
