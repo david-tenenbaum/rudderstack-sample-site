@@ -40,7 +40,8 @@ waitForElm('#ju_iframe_849165').then((elm) => {
     console.log('Element is ready');
     console.log(elm);
     window.addEventListener('message', (event) => {
-        console.log('From website: ', event.data);
+        console.log('From website: ', event.data.email);
+        rudderanalytics.identify(event.data.email);
     });
 });
 
