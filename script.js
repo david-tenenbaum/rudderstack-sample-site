@@ -16,6 +16,7 @@ function trackKeyClick() {
     }
 }
 
+console.log('test')
 window.addEventListener('message', (event) => {
     console.log('From website: ', event.data);
 });
