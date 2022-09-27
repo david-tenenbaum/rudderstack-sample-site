@@ -36,12 +36,12 @@ function waitForElm(selector) {
     });
 }
 
-waitForElm('#ju_iframe_849165').then((elm) => {
-    console.log('Element is ready');
-    console.log(elm);
+waitForElm('iframe[title="RS_TEST_82522"]').then((elm) => {
     window.addEventListener('message', (event) => {
-        console.log('From website: ', event.data.email);
-        rudderanalytics.identify(event.data.email);
+        console.log('User Email: ', event.data.email);
+        if (event.data.email) {
+            rudderanalytics.identify(event.data.email);
+        }
     });
 });
 
