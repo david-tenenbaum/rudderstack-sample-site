@@ -38,8 +38,8 @@ function waitForElm(selector) {
 
 waitForElm('iframe[title="RS_TEST_82522"]').then((elm) => {
     window.addEventListener('message', (event) => {
-        console.log('User Email (from global window): ', event.data.email);
         if (event.data.email) {
+            console.log('User Email (from global window): ', event.data.email);
             rudderanalytics.identify(event.data.email);
         }
     });
