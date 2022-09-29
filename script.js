@@ -39,10 +39,13 @@ function waitForElm(selector) {
 waitForElm('iframe[title="RS_TEST_82522"]').then((elm) => {
     window.addEventListener('message', (event) => {
         if (event.data) {
-            console.log('t: ', event.data.t);
-            console.log('coupon: ', event.data.coupon);
-            console.log('User Email (from global window): ', event.data.email);
+            console.log(elm.title);
+            console.log(elm.name);
             rudderanalytics.identify(event.data.email);
+            rudderanalytics.track('form submission', {
+                promotion_name: elm.name,
+                prompromotion_title: elm.title,
+            });
         }
     });
 });
