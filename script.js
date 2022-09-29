@@ -53,7 +53,7 @@ function ju_callback(t, email, coupon) {
   if (email) {
     rudderanalytics.identify(email);
     rudderanalytics.track('form submission', {
-      promotion_title: windown.ju_promo_title,
+      promotion_title: window.ju_promo_title,
       promotion_cmid: window.ju_show_campaign_id,
     });
   }
