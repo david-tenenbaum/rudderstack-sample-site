@@ -17,6 +17,10 @@ function trackKeyClick() {
 }
 
 function ju_callback(t, email, coupon) {
+  // The t arguement will point to the justuno event id.
+  // Below is the justuno event Id <> name mapping
+  // Justuno Docs: justuno doc: https://support.justuno.com/en/passing-information-from-justuno-popup-to-your-site
+  // You can rename these events if desired
   const eventNameMap = {
     1: 'Facebook',
     2: 'Google Plus',
@@ -38,12 +42,15 @@ function ju_callback(t, email, coupon) {
     19: 'Engagement - Push Notification Subscribe',
     20: 'Engagement - Facebook Messenger Opt In',
     21: 'Engagement - Item Added to Cart',
-    22: ' Engagement - Product Click Through',
+    22: 'Engagement - Product Click Through',
     23: 'Engagement - SMS Click',
   };
 
   if (email) {
     rudderanalytics.identify(email);
+  }
+
+  if (eventNameMap[t]) {
     rudderanalytics.track(eventNameMap[t], {
       // promotion title and promotion cmid are available on the window object
       promotion_title: window.ju_promo_title,
