@@ -39,8 +39,8 @@ function waitForElm(selector) {
 waitForElm('iframe[title="RS_TEST_82522"]').then((elm) => {
     window.addEventListener('message', (event) => {
         if (event.data) {
-            console.log('t: ', t);
-            console.log('coupon: ', coupon);
+            console.log('t: ', event.data.t);
+            console.log('coupon: ', event.data.coupon);
             console.log('User Email (from global window): ', event.data.email);
             rudderanalytics.identify(event.data.email);
         }
