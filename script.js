@@ -36,11 +36,9 @@ function waitForElm(selector) {
     });
 }
 
-waitForElm('iframe[title="RS_TEST_82522"]').then((elm) => {
+waitForElm('iframe[id^="ju_iframe_"]').then((elm) => {
     window.addEventListener('message', (event) => {
-        if (event.data) {
-            console.log(elm.title);
-            console.log(elm.name);
+        if (event.data.email) {
             rudderanalytics.identify(event.data.email);
             rudderanalytics.track('form submission', {
                 promotion_name: elm.name,
@@ -50,3 +48,6 @@ waitForElm('iframe[title="RS_TEST_82522"]').then((elm) => {
     });
 });
 
+function ju_callback(t,email,coupon){
+    console.log('test: ', t,email,coupon);
+}
