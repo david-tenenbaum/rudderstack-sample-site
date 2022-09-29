@@ -16,39 +16,41 @@ function trackKeyClick() {
   }
 }
 
-function waitForElm(selector) {
-  return new Promise((resolve) => {
-    if (document.querySelector(selector)) {
-      return resolve(document.querySelector(selector));
-    }
+// function waitForElm(selector) {
+//   return new Promise((resolve) => {
+//     if (document.querySelector(selector)) {
+//       return resolve(document.querySelector(selector));
+//     }
 
-    const observer = new MutationObserver((mutations) => {
-      if (document.querySelector(selector)) {
-        resolve(document.querySelector(selector));
-        observer.disconnect();
-      }
-    });
+//     const observer = new MutationObserver((mutations) => {
+//       if (document.querySelector(selector)) {
+//         resolve(document.querySelector(selector));
+//         observer.disconnect();
+//       }
+//     });
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-  });
-}
+//     observer.observe(document.body, {
+//       childList: true,
+//       subtree: true,
+//     });
+//   });
+// }
 
-waitForElm('iframe[id^="ju_iframe_"]').then((elm) => {
-  window.addEventListener('message', (event) => {
-    console.log('data: ', event.data);
-    if (event.data.email) {
-      rudderanalytics.identify(event.data.email);
-      rudderanalytics.track('form submission', {
-        promotion_name: elm.name,
-        prompromotion_title: elm.title,
-      });
-    }
-  });
-});
+// waitForElm('iframe[id^="ju_iframe_"]').then((elm) => {
+//   window.addEventListener('message', (event) => {
+//     if (event.data.email) {
+//       rudderanalytics.identify(event.data.email);
+//       rudderanalytics.track('form submission', {
+//         promotion_name: elm.name,
+//         prompromotion_title: elm.title,
+//       });
+//     }
+//   });
+// });
 
 function ju_callback(t, email, coupon) {
-  console.log('test: ', t, email, coupon);
+  console.log(this);
+  if (email) {
+    rudderanalytics.identify(email);
+  }
 }
