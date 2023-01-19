@@ -87,9 +87,3 @@ ul li:first-child {
 ul li:last-child {
   border-radius: 0 5px 5px 5px;
 }
-
-.content-block {
-  width: 200px;
-  height: 3000px;
-  background-color: green;
-}
